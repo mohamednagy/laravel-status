@@ -1,0 +1,26 @@
+{
+    "name": "nagy/laravel-status",
+    "description": "manage status column for elqouent models",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mohamednagy",
+            "email": "mohamed.n.haleem@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Nagy\\LaravelStatus\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nagy\\LaravelStatus\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6@dev"
+    },
+    "minimum-stability": "dev"
+}
