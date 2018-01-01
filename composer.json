@@ -22,5 +22,6 @@
     "require-dev": {
         "orchestra/testbench": "^3.6@dev"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable" : true
 }
