@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 class StatusNotExists extends InvalidArgumentException
 {
-    public function __construct($tatus)
+    public function __construct($status)
     {
         $message = $status. " doesn't exists";
         parent::__construct($message);

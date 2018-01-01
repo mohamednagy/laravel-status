@@ -20,7 +20,8 @@ class User extends Model
     protected static $status = [
         0 => 'pending',
         1 => 'approved',
-        2 => 'rejected'
+        2 => 'rejected',
+        3 => 'snake_case'
     ];
 
     protected static $status_column = 'status';
