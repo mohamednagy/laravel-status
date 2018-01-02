@@ -9,7 +9,7 @@ trait HasStatus
 {
     public static function bootHasStatus()
     {
-        $status_column = static::$status_column;
+        $status_column = (new static)->getStatusColumnName();
         foreach (static::$status as $statusValue => $statusStr) {
             Builder::macro('set'.studly_case($statusStr), function() use ($statusValue, $status_column){
                 return Builder::update([$status_column => $statusValue]);
@@ -24,20 +24,20 @@ trait HasStatus
     public function is($status)
     {
         $statusValue = $this->getStatusValue($status);
-        return $this->{self::$status_column} == $statusValue;
+        return $this->{$this->getStatusColumnName()} == $statusValue;
 
     }
 
     public function scopeOnlyHasStatus($query, $status)
     {
         $statusValue = $this->getStatusValue($status);
-        return $query->where(self::$status_column, $statusValue);
+        return $query->where($this->getStatusColumnName(), $statusValue);
     }
 
     public function setStatus($status)
     {
         $statusValue = $this->getStatusValue($status);
-        return $this->update([self::$status_column => $statusValue]);
+        return $this->update([$this->getStatusColumnName() => $statusValue]);
     }
 
     public function getStatusValue($status)
@@ -49,6 +49,11 @@ trait HasStatus
         }
         
         throw new StatusNotExists($status);
+    }
+
+    public function getStatusColumnName()
+    {
+        return static::$status_column ?? 'status';
     }
 
     public function __call($method, $args)

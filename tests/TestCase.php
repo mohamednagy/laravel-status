@@ -2,6 +2,7 @@
 
 namespace Nagy\LaravelStatus\Tests;
 
+use Nagy\LaravelStatus\Tests\Models\User;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Nagy\LaravelStatus\LaravelStatusServiceProvider;
 
@@ -55,15 +56,15 @@ abstract class TestCase extends Orchestra
 
     public function seedUser($status)
     {
-        return factory(\Nagy\LaravelStatus\Tests\Models\User::class)->create([
-            'status' => $status,
+        return factory(User::class)->create([
+            User::$status_column ?? 'status' => $status,
         ]);
     }
 
     public function seedUsers($count, $status)
     {
-        return factory(\Nagy\LaravelStatus\Tests\Models\User::class, $count)->create([
-            'status' => $status,
+        return factory(User::class, $count)->create([
+            User::$status_column ?? 'status' => $status,
         ]);
     }
 }

@@ -63,7 +63,7 @@ class StatusTest extends TestCase
         $this->assertCount(5, User::onlyApproved()->get());
         $this->assertCount(5, User::onlyRejected()->get());
 
-        User::where('status', 0)->setApproved();
+        User::where(User::$status_column ?? 'status', 0)->setApproved();
 
         $this->assertCount(0, User::onlyPending()->get());
         $this->assertCount(10, User::onlyApproved()->get());
@@ -83,7 +83,7 @@ class StatusTest extends TestCase
         $this->assertCount(5, User::onlyApproved()->get());
         $this->assertCount(5, User::onlyRejected()->get());
 
-        User::where('status', 0)->setRejected();
+        User::where(User::$status_column ?? 'status', 0)->setRejected();
 
         $this->assertCount(0, User::onlyPending()->get());
         $this->assertCount(5, User::onlyApproved()->get());

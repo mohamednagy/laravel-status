@@ -15,7 +15,7 @@ class User extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'status'];
+    protected $guarded = [];
 
     protected static $status = [
         0 => 'pending',
@@ -24,5 +24,5 @@ class User extends Model
         3 => 'snake_case'
     ];
 
-    protected static $status_column = 'status';
+    public static $status_column = 'status';
 }
