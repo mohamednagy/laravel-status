@@ -4,7 +4,6 @@ namespace Nagy\LaravelStatus\Tests;
 
 use Nagy\LaravelStatus\Tests\Models\User;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Nagy\LaravelStatus\LaravelStatusServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
@@ -40,18 +39,6 @@ abstract class TestCase extends Orchestra
         with(new \CreateUsersTable())->up();
 
         $this->withFactories(__DIR__.'/database/factories');
-    }
-    
-    /**
-     * @param \Illuminate\Foundation\Application $app
-     *
-     * @return array
-     */
-    protected function getPackageProviders($app)
-    {
-        return [
-            \Nagy\LaravelStatus\LaravelStatusServiceProvider::class,
-        ];
     }
 
     public function seedUser($status)

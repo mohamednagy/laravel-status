@@ -1,6 +1,6 @@
 <?php
 
-namespace Nagy\LaravelStatus\Traits;
+namespace Nagy\LaravelStatus;
 
 use Illuminate\Database\Eloquent\Builder;
 use Nagy\LaravelStatus\Exceptions\StatusNotExists;

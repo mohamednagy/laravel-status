@@ -3,7 +3,7 @@
 namespace Nagy\LaravelStatus\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Nagy\LaravelStatus\Traits\HasStatus;
+use Nagy\LaravelStatus\HasStatus;
 
 class User extends Model
 {
