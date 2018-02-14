@@ -1,6 +1,10 @@
 # Laravel-Status
-manage status likw moderation or anysomething else for elqouent models
+manage status like moderation or anysomething else for elqouent models
 
+# Install
+```
+$ composer install nagy/laravel-status
+```
 # Using!
 add the status column to your migration
 ```
