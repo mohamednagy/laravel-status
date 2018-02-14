@@ -25,7 +25,7 @@ if you need to override the databse *column* or rename it
 ```
 include the `HasStatus` into your model
 ```
-use Nagy\LaravelStatus\Traits\HasStatus;
+use Nagy\LaravelStatus\HasStatus;
 
 class User extends Model
 {
